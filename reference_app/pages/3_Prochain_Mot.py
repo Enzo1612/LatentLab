@@ -3,14 +3,12 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import matplotlib.pyplot as plt
 
-st.title("3. Devancer le Prochain Mot 🔮")
+st.title("3. Deviner le Prochain Mot")
 st.write("Les IA comme ChatGPT ne font que prédire le *prochain mot* ! Voyons comment.")
 
 @st.cache_resource
 def load_hf_model():
-    # Bloomz-560m est un modèle multilingue (français très fort car créé par le CNRS/BigScience) 
-    # de petite taille (560M de paramètres)
-    model_name = "bigscience/bloomz-560m" 
+    model_name = "croissantllm/CroissantLLMBase" 
     
     tokenizer = AutoTokenizer.from_pretrained(model_name)
     model = AutoModelForCausalLM.from_pretrained(model_name)
@@ -19,7 +17,7 @@ def load_hf_model():
 tokenizer, model = load_hf_model()
 
 # Une phrase tournée spécifiquement pour appeler un nom propre (pays/concept)
-sentence = st.text_input("Commencez une phrase :", "L'explorateur Christophe Colomb est célèbre pour avoir découvert")
+sentence = st.text_input("Commencez une phrase :", "L'explorateur Christophe Colomb est célèbre pour avoir découvert l'")
 
 if st.button("Voir les probabilités du prochain mot"):
     with st.spinner("Calcul des probabilités..."):
