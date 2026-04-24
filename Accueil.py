@@ -3,7 +3,7 @@ import streamlit as st
 st.set_page_config(page_title="LatentLab", page_icon="🤖", layout="centered")
 
 # Massive, clean header
-st.markdown("<h1 style='text-align: center; font-size: 3.5rem;'>LatentLab 🤖</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; font-size: 3.5rem;'>LatentLab</h1>", unsafe_allow_html=True)
 st.markdown("<h3 style='text-align: center; color: gray;'>Dans le Cerveau d'une Intelligence Artificielle</h3>", unsafe_allow_html=True)
 
 st.write("")
