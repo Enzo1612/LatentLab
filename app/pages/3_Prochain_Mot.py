@@ -3,9 +3,6 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import matplotlib.pyplot as plt
 
-st.title("3. Deviner le Prochain Mot")
-st.write("Les IA comme ChatGPT ne font que prédire le *prochain mot* ! Voyons comment.")
-
 @st.cache_resource
 def load_hf_model():
     model_name = "croissantllm/CroissantLLMBase" 
@@ -16,12 +13,42 @@ def load_hf_model():
 
 tokenizer, model = load_hf_model()
 
-# Une phrase tournée spécifiquement pour appeler un nom propre (pays/concept)
-sentence = st.text_input("Commencez une phrase :", "L'explorateur Christophe Colomb est célèbre pour avoir découvert l'")
+tab_theorie, tab_demo = st.tabs(["📖 Théorie : Le Prochain Mot", "⚙️ Expérience Interactive"])
 
-if st.button("Voir les probabilités du prochain mot"):
-    with st.spinner("Calcul des probabilités..."):
-        inputs = tokenizer(sentence, return_tensors="pt")
+with tab_theorie:
+    st.title("Comment une IA écrit-elle ?")
+    
+    st.markdown("""
+    <div style='background-color: #141B2D; padding: 30px; border-radius: 15px; border: 1px solid #00E5FF; text-align: center;'>
+        <h2 style='color: #00E5FF;'>La Machine à Deviner</h2>
+        <p style='font-size: 20px; line-height: 1.6;'>
+            Contrairement à un humain qui réfléchit à une idée globale, une IA générative comme ChatGPT <strong>ne fait que calculer le mot suivant</strong>.<br><br>
+        </p>
+        <div style='display: flex; justify-content: space-around; margin-top: 30px;'>
+            <div style='background-color: rgba(0, 229, 255, 0.1); padding: 20px; border-radius: 10px; width: 45%;'>
+                <h3>🎯 L'Auto-Complétion géante</h3>
+                <p>L'IA lit votre texte, regarde son immense dictionnaire, et donne une probabilité mathématique à chaque mot de la langue française.</p>
+            </div>
+            <div style='background-color: rgba(255, 100, 100, 0.1); padding: 20px; border-radius: 10px; width: 45%;'>
+                <h3>🎲 Le Choix final</h3>
+                <p>Elle choisit l'un des mots les plus probables pour continuer la phrase, et recommence le processus, encore et encore !</p>
+            </div>
+        </div>
+    </div>
+    <br>
+    <p style='text-align: center; color: gray;'><em>(Passez à l'onglet Expérience Interactive en haut 👆 pour la démo)</em></p>
+    """, unsafe_allow_html=True)
+
+with tab_demo:
+    st.title("3. Deviner le Prochain Mot")
+    st.write("Les IA comme ChatGPT ne font que prédire le *prochain mot* ! Voyons comment.")
+
+    # Une phrase tournée spécifiquement pour appeler un nom propre (pays/concept)
+    sentence = st.text_input("Commencez une phrase :", "L'explorateur Christophe Colomb est célèbre pour avoir découvert l'")
+
+    if st.button("Voir les probabilités du prochain mot"):
+        with st.spinner("Calcul des probabilités..."):
+            inputs = tokenizer(sentence, return_tensors="pt")
         with torch.no_grad():
             outputs = model(**inputs)
         
