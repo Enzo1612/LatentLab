@@ -42,7 +42,7 @@ with tab_theorie:
     """, unsafe_allow_html=True)
 
 with tab_demo:
-    st.title("2. Explorer les Données d'Entraînement")
+    st.title("1. Explorer les Données d'Entraînement")
     st.write("Naviguons en direct dans la base de Wikipédia ingérée par le modèle pendant son entraînement (le pre-training) !")
 
     query = st.text_input("Cherchez une idée profondément enfouie dans la base :", "Intelligence")

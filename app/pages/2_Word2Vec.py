@@ -41,7 +41,7 @@ with tab_theorie:
     """, unsafe_allow_html=True)
 
 with tab_demo:
-    st.title("1. Word2Vec : Calculer avec des Mots")
+    st.title("2. Word2Vec : Calculer avec des Mots")
     st.write("Vérifions si la machine a vraiment compris les concepts ! Faisons des mathématiques avec le sens des mots.")
 
     st.subheader("Additionner et Soustraire le sens")

@@ -69,10 +69,16 @@ with tab_demo:
                 else:
                     contexte_tronque = full_context
                     
-                answer = qa_engine(question=question, context=contexte_tronque)
-                
-                result = answer['answer']
-                score = answer['score']
+                answer = qa_engine(
+                    question=question,
+                    context=contexte_tronque
+                )
+
+                if isinstance(answer, list):
+                    answer = answer[0]
+
+                result = answer["answer"]
+                score = answer["score"]
                 
                 st.write("### La réponse finale trouvée :")
                 

@@ -30,7 +30,7 @@ En science: Intelligent, en philosophie: pas intelligents car compréhension à 
 
 Pour pouvoir répondre à cette question il faut savoir comment ces modèles fonctionnent. Cette présentation a pour but de vous donner les bases de l'apprentissage machine.
 
-## Word2Vec
+## Cerveau
 
 Avant de parler ou d'associer les mots, l'IA doit apprendre la langue.
 
@@ -42,7 +42,9 @@ Après avoir lu assez d'articles, elle remarque que le mot chat est utilisé dan
 
 Ce processus dure plusieurs mois, requiert des milliers d'ordinateurs surpuissant pour traiter les documents et consomme énormément d'énergie. 
 
-### Embedding
+**VOIR CERVEAU**
+
+## Word2Vec
 
 Les ordinateurs ne peuvent pas comprendre les mots écrits avec des lettres. Il faut les traduire dans une langue mathématique. Mais comment donner du sens à un nombre ?
 
@@ -59,3 +61,27 @@ Après avoir lu des milliards de phrases pendant des mois, la carte s'est organi
 L'IA n'a aucun dictionnaire interne avec des définitions. Pour elle, la seule définition du mot "chat", c'est la liste de ses coordonnées GPS sur cette immense carte. Un mot n'a de sens que grâce aux mots qui l'entourent. Elle se contente de calculer des distances entre les villes sur sa carte ! 
 
 La représentation de ces mots nous permet de faire des calculs comme avec des nombres.
+
+**VOIR MODULE WORD2VEC**
+
+## Prochain Mot
+
+Maintenant que l'IA dispose de cet espace, elle est capable de prédire le prochain token. En répétant l'opération assez de fois, elle produit des mots, puis des phrases, puis une réponse à votre question. On se rend compte que les actions de l'IA sont très locales. Elle ne planifie pas ce qu'elle va dire. Elle génère des mots qui forment une phrase cohérente si elle à été bien entrainée. 
+
+**VOIR PROCHAIN MOT**
+
+## Temperature
+
+Le modèle a un certain pourcentage de certitude a chaque prédiction. La température correspond à la créativité du modèle. Plus la température est basse, moins il va prendre de risque et toujours choisir le mot le plus probable. En augmentant la température on obtient un modèle plus créatif qui donne des réponses souvent plus intéressante. Attention à ne pas laisser trop de liberté au modèle.
+
+**VOIR MODULE TEMPERATURE**
+
+## Memoire courte
+
+Tout ce qui est dit dans un même chat est dans le contexte du modèle. C'est ce que le modèle peut utiliser pour répondre, en plus de l'espace mathématique. On peut le voir comme un magasin avec une certaine capacité. Lorsque le magasin est plein et qu'une nouvelle personne veut rentrer, il faut qu'une personne déjà dans le magasin sorte. Cette personne était le premier mot dans le contexte de l'IA. Elle a donc oublié ce que vous lui avez dit en premier. 
+
+**VOIR MODULE MEMOIRE**
+
+## Conclusion
+
+On voit bien qu'une IA n'est rien de plus qu'un moteur mathématique sophistiqué. Rien de comparable à un cerveau humain qui comprend des définitions et est capable d'en déduire des relations. Il est donc légitime de se poser la question "Est-ce que l'IA est intelligente?".

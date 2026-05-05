@@ -49,7 +49,7 @@ st.markdown("""
 col1, col2, col3 = st.columns(3)
 with col1:
     st.markdown("""
-    <a href="Le_Cerveau_Geant" target="_self" class="card-link">
+    <a href="Cerveau" target="_self" class="card-link">
         <div class="module-card" style='border-left: 4px solid #FF5050;'>
             <h3 style='margin-top: 0;'>1️⃣ Le Cerveau Géant</h3>
             <p style='color: #A0B0C0;'>Visualisation de l'immense base de données (Wikipédia) que l'IA a dû avaler avant même de dire son premier mot.</p>
